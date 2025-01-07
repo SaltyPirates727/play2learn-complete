@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     "games.apps.GamesConfig",
     'accounts',
     'contact',
+    'reviews',
+    'homepage',
 ]
 
 LOGIN_REDIRECT_URL = '/accounts/my_account/'
