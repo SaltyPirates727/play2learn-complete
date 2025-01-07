@@ -39,8 +39,12 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
 
     # local apps
-    "games.apps.GamesConfig"
+    "games.apps.GamesConfig",
+    'accounts',
 ]
+
+LOGIN_REDIRECT_URL = '/accounts/my_account/'
+LOGOUT_REDIRECT_URL = '/accounts/login/'
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
