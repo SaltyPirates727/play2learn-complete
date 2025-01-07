@@ -41,10 +41,14 @@ INSTALLED_APPS = [
     # local apps
     "games.apps.GamesConfig",
     'accounts',
+    'contact',
 ]
 
 LOGIN_REDIRECT_URL = '/accounts/my_account/'
 LOGOUT_REDIRECT_URL = '/accounts/login/'
+
+DEFAULT_FROM_EMAIL = 'webmaster@localhost'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
