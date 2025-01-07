@@ -12,7 +12,24 @@
   <form method="POST">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Submit Review</button>
+    <button class="btn btn-primary" type="submit">Submit Review</button>
   </form>
 </body>
+
+<style>
+  body {
+      form {
+          text-align: center;
+      }
+      p:last-of-type {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+      }
+  }
+  </style>
+
+
 </html>
+
