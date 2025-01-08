@@ -127,8 +127,23 @@ export default {
       this.correctGuesses = [];
     },
     async recordScore() {
-      // TODO: when Anagram Hunt finishes, make an Ajax call with axios (this.axios)
-      // to record the score on the backend
+      try {
+          const url = `http://127.0.0.1:8000/leaderboard/submit-score/?score=${this.score}&game_type=Anagram%20Hunt`;
+
+          const response = await fetch(url, {
+              method: "GET",
+              credentials: "same-origin" // Make sure the user's session is included
+          });
+
+          if (!response.ok) {
+              throw new Error("Failed to submit score");
+          }
+
+          const data = await response.json();
+          console.log("Score submitted:", data);
+      } catch (error) {
+          console.error("Error submitting score:", error);
+      }
     }
   },
   watch: {
@@ -144,6 +159,20 @@ export default {
         this.recordScore(); // calls recordScore
       }
     }
-  }
+  },
+  async fetchLeaderboard() {
+    try {
+      const response = await fetch('http://127.0.0.1:8000/leaderboard/leaderboard/');
+      if (response.ok) {
+        const data = await response.json();
+        console.log('Leaderboard Data:', data);
+        this.leaderboard = data; // Store it in a data property
+      } else {
+        console.error('Failed to fetch leaderboard:', response.statusText);
+      }
+    } catch (error) {
+      console.error('Error fetching leaderboard:', error);
+    }
+  },
 }
 </script>

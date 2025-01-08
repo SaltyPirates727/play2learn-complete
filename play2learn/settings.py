@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'contact',
     'reviews',
     'homepage',
+    'leaderboard',
 ]
 
 LOGIN_REDIRECT_URL = '/accounts/my_account/'
