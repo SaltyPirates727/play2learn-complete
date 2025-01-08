@@ -10,7 +10,18 @@
 <title>Login</title>
 
 </head>
-
+<header>
+    <div class="nav">
+        <p><a href="/accounts/register/">Register Account</a></p>
+        <p><a href="/accounts/login/">Login</a></p>
+        <p><a href="/accounts/my_account/">My Account</a></p>
+        <p><a href="/math-facts/">Math Facts</a></p>
+        <p><a href="/anagram-hunt/">Anagram Hunt</a></p>
+        <p><a href="/reviews/submit-review/">Leave a Review</a></p>
+        <p><a href="/contact-us/">Contact Us</a></p>
+        <p><a href="/accounts/logout/">Logout</a></p>
+    </div>
+</header>
 <body>
     <div class="container">
         <h1>Login</h1>
@@ -29,29 +40,38 @@
 </body>
 
 <style>
-    body {
-        .container {
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        left: 50%;
+        position: absolute;
+        h1 {
+            margin-bottom: 40px;
+        }
+        form {
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            transform: translate(-50%, -50%);
-            top: 50%;
-            left: 50%;
-            position: absolute;
-            h1 {
-                margin-bottom: 40px;
-            }
-            form {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-            }
-            button {
-                margin-top: 10px;
-            }
         }
+        button {
+            margin-top: 10px;
+        }
+    }
+    .nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-top: 5px;
+        p {
+        font-size: 13px;
+        }
+    }
 </style>
 
 </html>

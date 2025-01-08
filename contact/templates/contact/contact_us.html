@@ -10,6 +10,18 @@
 <title>Contact Us</title>
 
 </head>
+<header>
+    <div class="nav">
+        <p><a href="/accounts/register/">Register Account</a></p>
+        <p><a href="/accounts/login/">Login</a></p>
+        <p><a href="/accounts/my_account/">My Account</a></p>
+        <p><a href="/math-facts/">Math Facts</a></p>
+        <p><a href="/anagram-hunt/">Anagram Hunt</a></p>
+        <p><a href="/reviews/submit-review/">Leave a Review</a></p>
+        <p><a href="/contact-us/">Contact Us</a></p>
+        <p><a href="/accounts/logout/">Logout</a></p>
+    </div>
+</header>
 
 <body>
     <!-- Bootstrap JS CDN -->
@@ -53,6 +65,16 @@
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
+            }
+        }
+        .nav {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+            margin-top: 5px;
+            p {
+            font-size: 13px;
             }
         }
 </style>
