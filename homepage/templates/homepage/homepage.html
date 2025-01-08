@@ -12,12 +12,25 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
       
 <body>
-    <header>
-        <h1>Welcome to Our Website!</h1>
-    </header>
+    <div class="container">
+        <header>
+            <h1>Welcome to Our Website!</h1>
+        </header>
 
-    <main>
-            <div id="reviewCarousel" class="carousel slide" data-ride="carousel">
+        <main>
+            <h2>Table of Contents</h2>
+            <div class="toc">
+                    <p><a href="/accounts/register/">Register Account</a></p>
+                    <p><a href="/accounts/login/">Login</a></p>
+                    <p><a href="/accounts/my_account/">My Account</a></p>
+                    <p><a href="/accounts/logout/">Logout</a></p>
+                    <p><a href="/math-facts/">Math Facts</a></p>
+                    <p><a href="/anagram-hunt/">Anagram Hunt</a></p>
+                    <p><a href="/reviews/submit-review/">Leave a Review</a></p>
+                    <p><a href="/contact-us/">Contact Us</a></p>
+            </div>
+            <h2>Check out our reviews!</h2>
+            <div id="reviewCarousel" class="carousel slide border" data-ride="carousel">
                 <div class="carousel-inner">
                     {% for review in featured_reviews %}
                         <div class="carousel-item {% if forloop.first %}active{% endif %}">
@@ -37,10 +50,49 @@
                     <span class="sr-only">Next</span>
                 </a>
             </div>
-    </main>
+        </main>
 
-    <footer>
-        <p>&copy; 2025 My Website</p>
-    </footer>
+        <footer>
+            <p>&copy; Play2Learn | Ryan Coffman</p>
+        </footer>
+
+    </div>
 </body>
+
+<style>
+header {
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h2 {
+        text-align: center !important;
+    }
+    .toc {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 40px;
+        p {
+            margin-bottom: 2px;
+        }
+    }
+    .border {
+        text-align: center;
+        width: 100%;
+        border: 0px white solid !important;
+        padding: 40px 60px;
+        .carousel-control-prev, .carousel-control-next {
+            display: none;
+        }
+    }
+}
+</style>
+
 </html>
