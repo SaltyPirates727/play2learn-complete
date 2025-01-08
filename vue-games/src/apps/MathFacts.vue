@@ -159,8 +159,23 @@ export default {
       }
     },
     async recordScore() {
-      // TODO: when Math Facts finishes, make an Ajax call with axios (this.axios)
-      // to record the score on the backend
+      try {
+          const url = `http://127.0.0.1:8000/leaderboard/submit-score/?score=${this.score}&game_type=Math%20Facts`;  // Use the appropriate game name
+
+          const response = await fetch(url, {
+              method: "GET",
+              credentials: "same-origin" // Make sure the user's session is included
+          });
+
+          if (!response.ok) {
+              throw new Error("Failed to submit score");
+          }
+
+          const data = await response.json();
+          console.log("Score submitted:", data);
+      } catch (error) {
+          console.error("Error submitting score:", error);
+      }
     }
   },
   computed: {
